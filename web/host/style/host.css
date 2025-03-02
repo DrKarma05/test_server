@@ -1,0 +1,218 @@
+/* Reset dasar */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #0a192f;
+}
+
+/* Kontainer utama */
+.container {
+    width: 90%;
+    max-width: 800px;
+    margin: auto;
+    overflow: hidden;
+}
+
+/* Header */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 5px solid #111;
+    padding-bottom: 10px;
+    padding-top: 15px;
+    background-image: url(./asset/role-bg.png);
+}
+
+/* Konten utama */
+.content {
+    padding: 20px;
+    background: #04213d;
+    margin-top: 20px;
+    border-radius: 5px;
+    color: white;
+}
+
+.content h2 {
+    font-size: 22px;
+}
+
+.content ol {
+    margin: 20px 0;
+    padding-left: 20px;
+}
+
+.content ol li {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: white;
+}
+
+/* Link Vhost */
+.vhost-link, .host-link {
+    font-weight: bold;
+    padding: 5px 10px;
+    color: white;
+    text-align: center;
+    border-radius: 8px;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.vhost-link {
+    background: #0bdaff;
+}
+
+.vhost-link:hover {
+    background: #0aa5c0;
+}
+
+.host-link {
+    background: #3cff0b;
+}
+
+.host-link:hover {
+    background: #34db0a;
+}
+
+.ip-server{
+    font-weight: bold;
+    color: orange;
+}
+
+/* Peringatan / Catatan */
+.note {
+    background: #ffdddd;
+    border-left: 6px solid #f44336;
+    padding: 10px;
+    margin-top: 20px;
+    font-size: 18px;
+    color: black;
+}
+
+.note .discord-link {
+    font-weight: bold;
+    color: orangered;
+    text-decoration: solid;
+}
+
+/* Footer */
+footer {
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+footer a {
+    color: #77aaff;
+    text-decoration: none;
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.logo img {
+    width: 156px;
+    height: auto;
+    padding: 20px 0;
+    animation: logoFloat 3s ease-in-out infinite;
+}
+
+/* Tombol Kembali */
+.back-button {
+    padding: 0.6em 2em;
+    border: none;
+    outline: none;
+    color: white;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    user-select: none;
+    transition: color 0.5s;
+}
+
+.back-button:before {
+    content: "";
+    background: linear-gradient(
+        45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000
+    );
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing-back-button 20s linear infinite;
+    border-radius: 10px;
+}
+
+.back-button:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #222;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+    z-index: -1;
+}
+
+.back-button:hover {
+    color: #00f7d6;
+}
+
+/* Animasi */
+@keyframes glowing-back-button {
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 400% 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
+
+@keyframes logoFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Responsif untuk tablet dan smartphone */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 0 10px;
+    }
+
+    header h1 {
+        font-size: 20px;
+    }
+
+    .content h2 {
+        font-size: 20px;
+    }
+
+    .content ol li, .note, footer {
+        font-size: 14px;
+    }
+}

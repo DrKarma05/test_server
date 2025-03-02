@@ -1,0 +1,787 @@
+/* Main Styles */
+:root {
+    --primary-color: #8B5CF6;
+    --secondary-color: #1F2937;
+    --accent-color: #EC4899;
+    --text-color: #F9FAFB;
+    --background-color: #111827;
+    --gradient-1: #000000;
+    --gradient-2: #111827;
+    --gradient-3: #1F2937;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: transparent;
+    color: var(--text-color);
+    overflow-x: hidden;
+    position: relative;
+}
+
+.animated-gradient {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    background: linear-gradient(45deg, 
+        var(--gradient-1),
+        var(--gradient-2),
+        var(--gradient-3)
+    );
+    background-size: 200% 200%;
+    animation: gradientBG 20s ease infinite;
+}
+
+.particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: 
+        radial-gradient(circle at 20% 20%, rgba(139, 92, 246, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(236, 72, 153, 0.15) 0%, transparent 50%);
+    animation: particleMove 40s linear infinite;
+}
+
+@keyframes l9-0{
+  0%,25%    {background-size: 50% 100%}
+  25.1%,75% {background-size: 0 0,50% 100%}
+  75.1%,100%{background-size: 0 0,0 0}
+}
+@keyframes l9-1{
+  25%   { background-position:bottom, bottom 54px left 0,bottom 3px left 0,bottom 0 left 50%;left:0}
+  25.1% { background-position:bottom, bottom 10px left 0,bottom 3px left 0,bottom 0 left 50%;left:0}
+  50%   { background-position:bottom, bottom 10px left 0,bottom 3px left 0,bottom 0 left 50%;left:calc(100% - 22px)}
+  75%   { background-position:bottom, bottom 54px left 0,bottom 3px left 0,bottom 0 left 50%;left:calc(100% - 22px)}
+  75.1% { background-position:bottom, bottom 10px left 0,bottom 3px left 0,bottom 0 left 50%;left:calc(100% - 22px)}
+}
+
+/* Header Styles */
+header {
+    background: rgba(31, 41, 55, 0.95);
+    padding: 1rem 2rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo img {
+    width: 100px;
+    height: auto;
+    animation: logoFloat 3s ease-in-out infinite;
+}
+
+.logo h1 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+}
+
+nav {
+    display: flex;
+    gap: 2rem;
+}
+
+nav a {
+    position: relative;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    margin: 0 10px;
+    color: #fff;
+    transition: all 0.2s ease;
+    background: linear-gradient(90deg, transparent 0%, transparent 50%, rgba(255,255,255,0.1) 50%);
+    background-size: 200% 100%;
+    font-weight: 500;
+    border-radius: 0.5rem;
+}
+
+nav a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #00dbde, #fc00ff);
+    transition: width 0.3s ease-in-out;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(270deg, #00dbde, #fc00ff);
+    transition: width 0.3s ease-in-out;
+}
+
+nav a:hover::before,
+nav a:hover::after {
+    width: 100%;
+}
+
+nav a.active {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+}
+
+nav a:hover {
+    background-position: -100% 0;
+    transform: translateY(-2px) scale(1.05);
+    background: rgba(139, 92, 246, 0.1);
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    background: rgba(17, 24, 39, 0.7);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: white;
+    position: relative;
+    perspective: 1000px;
+    overflow: hidden;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    transform-style: preserve-3d;
+    transform: translateZ(-1px) scale(2);
+    z-index: -1;
+}
+
+.hero h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 800;
+    position: relative;
+    display: inline-block;
+    text-shadow: 
+        0 0 10px rgba(139, 92, 246, 0.5),
+        0 0 20px rgba(139, 92, 246, 0.3);
+    animation: neonGlow 2s ease-in-out infinite;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.hero-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+@keyframes neonGlow {
+    0%, 100% {
+        text-shadow: 
+            0 0 10px rgba(255, 215, 0, 0.8),
+            0 0 20px rgba(255, 215, 0, 0.8),
+            0 0 30px rgba(255, 215, 0, 0.8);
+        color: #FFD700;
+    }
+    50% {
+        text-shadow: 
+            0 0 20px rgba(255, 215, 0, 0.9),
+            0 0 30px rgba(255, 215, 0, 0.9),
+            0 0 40px rgba(255, 215, 0, 0.9);
+        color: #FFC000;
+    }
+}
+
+/* Efek neon glow */
+@keyframes titleGlow {
+    0%, 100% {
+        text-shadow: 
+            0 0 10px rgba(255, 215, 0, 0.8),
+            0 0 20px rgba(255, 215, 0, 0.8),
+            0 0 30px rgba(255, 215, 0, 0.8),
+            0 0 40px rgba(255, 165, 0, 0.8),
+            0 0 70px rgba(255, 140, 0, 0.8);
+    }
+    50% {
+        text-shadow: 
+            0 0 20px rgba(255, 215, 0, 0.8),
+            0 0 30px rgba(255, 215, 0, 0.8),
+            0 0 40px rgba(255, 215, 0, 0.8),
+            0 0 50px rgba(255, 165, 0, 0.8),
+            0 0 80px rgba(255, 140, 0, 0.8);
+    }
+}
+
+/* Tambahkan efek 3D */
+.hero h1::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: linear-gradient(45deg, 
+        rgba(255, 215, 0, 0.1),
+        rgba(255, 165, 0, 0.1)
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    transform: translateZ(-10px);
+    filter: blur(5px);
+    animation: depthAnimation 3s ease-in-out infinite;
+}
+
+@keyframes depthAnimation {
+    0%, 100% {
+        transform: translateZ(-10px) scale(1);
+    }
+    50% {
+        transform: translateZ(-5px) scale(1.02);
+    }
+}
+
+/* Tambahkan efek sparkle */
+@keyframes sparkle {
+    0%, 100% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.hero h1::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, 
+        rgba(255, 255, 255, 0.8) 0%,
+        transparent 60%
+    );
+    mix-blend-mode: overlay;
+    animation: sparkle 3s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.cta-button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-button:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+}
+
+.cta-button:hover:before {
+    width: 300px;
+    height: 300px;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button:active {
+    transform: translateY(-1px) scale(0.98);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.discord {
+    background: #5865F2;
+    color: white;
+}
+
+.whatsapp {
+    background: #25D366;
+    color: white;
+}
+
+.donate {
+    background: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+/* Animation Classes */
+.animate-text {
+    animation: fadeInUp 1s ease-out;
+}
+
+.animate-text-delay {
+    animation: fadeInUp 1s ease-out 0.3s backwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes logoFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px var(--primary-color);
+    }
+    to {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px var(--primary-color);
+    }
+}
+
+@keyframes imageLoad {
+    from {
+        filter: blur(5px);
+        opacity: 0;
+    }
+    to {
+        filter: blur(0);
+        opacity: 1;
+    }
+}
+
+img {
+    animation: imageLoad 1s ease-out;
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes particleMove {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+.animated-gradient::after {
+    display: none;
+}
+
+.cta-icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+/* Rules & Contact Container */
+.rules-contact-container {
+    display: flex;
+    justify-content: space-between;
+    background: #000000;
+    padding: 2rem;
+}
+
+/* Rules Section */
+.rules {
+    flex: 1;
+    padding: 2rem;
+    text-align: left;
+    background: #000000;
+    max-width: 50%;
+}
+
+.rules h2 {
+    color: #8B5CF6;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.rules p {
+    color: #fff;
+    line-height: 1.4;
+    font-size: 0.9rem;
+    max-width: 90%;
+}
+
+/* Contact Section */
+.contact {
+    flex: 1;
+    padding: 2rem;
+    text-align: left;
+    background: #000000;
+    max-width: 50%;
+}
+
+.contact h2 {
+    color: #8B5CF6;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.contact p {
+    color: #fff;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.contact-button {
+    margin-top: 0.5rem;
+}
+
+.discord-btn {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    background: #8B5CF6;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: background 0.3s ease;
+}
+
+.discord-btn:hover {
+    background: #7C3AED;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .rules-contact-container {
+        flex-direction: column;
+    }
+
+    .rules, .contact {
+        max-width: 100%;
+        padding: 1rem;
+    }
+
+    .hero h1 {
+        font-size: clamp(1.5rem, 4vw, 2.2rem);
+        letter-spacing: 1px;
+        margin-bottom: 1.5rem;
+        padding: 0 10px;
+        text-shadow: 
+            0 0 8px rgba(255, 215, 0, 0.8),
+            0 0 15px rgba(255, 215, 0, 0.8);
+    }
+
+    nav {
+        gap: 1rem;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.75rem;
+    }
+}
+
+/* Optimasi untuk perangkat dengan layar kecil */
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.8rem;
+        letter-spacing: 0.5px;
+        text-shadow: 
+            0 0 5px rgba(255, 215, 0, 0.8),
+            0 0 10px rgba(255, 215, 0, 0.8);
+    }
+}
+
+/* Optimasi untuk perangkat dengan DPI tinggi */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .hero h1 {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}
+
+/* Footer */
+footer {
+    background: #000000;
+    padding: 2rem;
+    text-align: left;
+    color: #8B5CF6;
+    border-top: 1px solid #333;
+}
+
+footer p {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+}
+
+footer p:last-child {
+    color: #666;
+}
+
+/* Tagline Animation Styles */
+.tagline-container {
+    height: 50px;
+    margin: 0 0 2rem 0;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 800px;
+}
+
+.tagline {
+    text-align: center;
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fade-text {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: -50px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.1s linear;
+    background: linear-gradient(45deg, var(--primary-color), #63b3ed);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: 600;
+    font-size: 1.5em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 0 1rem;
+}
+
+.fade-text.active {
+    opacity: 1;
+    visibility: visible;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all 0.1s linear;
+}
+
+.fade-text.fade-out {
+    opacity: 0;
+    visibility: hidden;
+    top: 100px;
+    transform: translateY(0);
+    transition: all 0.1s linear;
+}
+
+.hero-logo img {
+    width: 200px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+/* Styling untuk Google Translate */
+#google_translate_element {
+    margin-left: 20px;
+}
+
+.goog-te-gadget {
+    font-family: 'Poppins', sans-serif !important;
+    color: white !important;
+}
+
+.goog-te-gadget-simple {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    padding: 8px !important;
+    border-radius: 5px !important;
+    font-size: 14px !important;
+    line-height: 1.2 !important;
+    display: inline-block;
+    cursor: pointer;
+    zoom: 1;
+}
+
+.goog-te-gadget-simple span {
+    color: white !important;
+}
+
+.goog-te-menu-value span {
+    color: white !important;
+}
+
+.goog-te-menu-value:hover {
+    text-decoration: none !important;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    #google_translate_element {
+        margin: 10px auto;
+    }
+    
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Styling untuk online players counter */
+.online-players {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.player-count {
+    font-size: 1.8rem;
+    color: #FFD700;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+    font-weight: bold;
+    animation: pulse 2s infinite;
+    transition: all 0.3s ease;
+}
+
+#playerCount {
+    display: inline-block;
+    min-width: 30px;
+    text-align: center;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+        text-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Animasi untuk perubahan angka */
+.number-changed {
+    animation: numberPop 0.5s ease-out;
+}
+
+@keyframes numberPop {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+        color: #FFA500;
+        text-shadow: 0 0 15px rgba(255, 165, 0, 0.8);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Styling untuk history angka */
+.player-history {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: rgba(255, 215, 0, 0.7);
+}
+
+.history-number {
+    display: inline-block;
+    margin: 0 5px;
+    padding: 2px 5px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

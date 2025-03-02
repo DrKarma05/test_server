@@ -1,0 +1,92 @@
+/* Floating WhatsApp Button Styles */
+.floating-whatsapp {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1000;
+    animation: floating 3s ease-in-out infinite;
+}
+
+.whatsapp-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background: rgba(37, 211, 102, 0.8);
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+    transition: all 0.3s ease;
+}
+
+.whatsapp-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(37, 211, 102, 0.4);
+    background: rgba(37, 211, 102, 0.9);
+}
+
+.whatsapp-icon {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
+
+/* Animasi floating */
+@keyframes floating {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* Animasi pulse untuk efek tambahan */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
+}
+
+/* Menambahkan efek pulse saat hover */
+.floating-whatsapp:hover .whatsapp-button {
+    animation: pulse 2s infinite;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .floating-whatsapp {
+        bottom: 20px;
+        right: 20px;
+    }
+
+    .whatsapp-button {
+        width: 50px;
+        height: 50px;
+    }
+
+    .whatsapp-icon {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+/* Efek shadow saat dark mode */
+@media (prefers-color-scheme: dark) {
+    .whatsapp-button {
+        box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+    }
+    
+    .whatsapp-button:hover {
+        box-shadow: 0 6px 16px rgba(37, 211, 102, 0.5);
+    }
+}

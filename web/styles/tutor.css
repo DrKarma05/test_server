@@ -1,0 +1,498 @@
+/* Tutorials Section Styles */
+
+.tutorials {
+    padding: 4rem 2rem;
+    overflow: hidden;
+    background-image: url('assets/tutorial-bg.png');
+}
+
+.tutorials h2 {
+    text-align: center;
+    color: #fff;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    animation: fadeInDown 1s ease-out;
+}
+
+.tutorials-container {
+    position: relative;
+    overflow: hidden;
+    padding: 0 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.tutorial-grid {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+    width: 100%;
+}
+
+.tutorial-card {
+    flex: 0 0 25%;
+    padding: 0 10px;
+    min-width: 250px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease;
+    border: 2px solid rgba(79, 209, 197, 0.3);
+    position: relative;
+}
+
+.tutorial-card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(79, 209, 197, 0.8);
+    box-shadow: 0 12px 40px rgba(79, 209, 197, 0.2);
+}
+
+.tutorial-card i {
+    font-size: 3rem;
+    color: #4fd1c5;
+    margin-bottom: 1rem;
+}
+
+.tutorial-card h3 {
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.tutorial-card p {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 1.5rem;
+}
+
+.tutorial-btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background: rgba(79, 209, 197, 0.2);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.tutorial-btn:hover {
+    background: rgba(79, 209, 197, 0.4);
+    transform: scale(1.05);
+}
+
+/* Slider Controls */
+.tutorials .slider-controls {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    z-index: 3;
+    pointer-events: none;
+}
+
+.tutorials .slider-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(79, 209, 197, 0.3);
+    border: none;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tutorials .slider-button:hover {
+    background: rgba(79, 209, 197, 0.6);
+}
+
+.tutorials .slider-button.prev-button {
+    left: 10px;
+}
+
+.tutorials .slider-button.next-button {
+    right: 10px;
+}
+
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    background: #4fd1c5;
+    transform: scale(1.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .tutorial-grid {
+        display: flex;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .tutorial-card {
+        flex: 0 0 100%;
+        padding: 0 10px;
+        min-width: unset;
+    }
+}
+
+/* Tutorial Page Styles */
+.tutorial-content {
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    min-height: 100vh;
+    color: #fff;
+    padding: 60px 15px 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Animated Background */
+.tutorial-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 20%, rgba(62, 84, 172, 0.2) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(62, 84, 172, 0.2) 0%, transparent 50%);
+    animation: glowPulse 10s ease-in-out infinite;
+    z-index: 0;
+}
+
+/* Grid Pattern */
+.tutorial-content::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: gridMove 20s linear infinite;
+    opacity: 0.3;
+    z-index: 0;
+}
+
+.tutorial-wrapper {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.tutorial-header {
+    text-align: center;
+    margin-bottom: 1rem;
+    animation: fadeInDown 1s ease-out;
+}
+
+.tutorial-header h1 {
+    font-size: 2rem;
+    color: #4fd1c5;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 15px rgba(79, 209, 197, 0.5);
+    padding: 0 10px;
+}
+
+.step {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transform: translateX(-50px);
+    opacity: 0;
+    animation: slideIn 0.5s ease-out forwards;
+}
+
+.step:nth-child(even) {
+    transform: translateX(50px);
+}
+
+.step h2 {
+    color: #4fd1c5;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.step h2::before {
+    content: '→';
+    color: #4fd1c5;
+    animation: bounce 1s ease-in-out infinite;
+}
+
+.step p, .step ul {
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+}
+
+.step ul {
+    list-style: none;
+    padding-left: 1.5rem;
+}
+
+.step ul li {
+    margin-bottom: 0.5rem;
+    position: relative;
+}
+
+.step ul li::before {
+    content: '•';
+    color: #4fd1c5;
+    position: absolute;
+    left: -1.5rem;
+    animation: pulse 2s infinite;
+}
+
+/* Animations */
+@keyframes glowPulse {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 0.8; }
+}
+
+@keyframes gridMove {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(-50%, -50%); }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(5px); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .tutorial-header h1 {
+        font-size: 2rem;
+    }
+
+    .step {
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .step h2 {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .tutorial-content {
+        padding: 60px 15px 30px;
+    }
+
+    .tutorial-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .step {
+        padding: 1.2rem;
+        margin-bottom: 1rem;
+    }
+
+    .step h2 {
+        font-size: 1.2rem;
+    }
+}
+
+/* Download Section Styles */
+.download-section {
+    text-align: center;
+    padding: 1rem;
+}
+
+.download-button {
+    margin: 1.5rem 0;
+}
+
+.download-link {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background: linear-gradient(45deg, #4fd1c5, #63b3ed);
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 1rem;
+    width: 80%;
+    max-width: 300px;
+}
+
+.download-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(79, 209, 197, 0.4);
+}
+
+.version-info {
+    margin: 1rem 0;
+    color: #4fd1c5;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.warning-box {
+    background: rgba(255, 87, 87, 0.1);
+    border: 1px solid rgba(255, 87, 87, 0.3);
+    border-radius: 10px;
+    padding: 1rem;
+    margin: 1rem 0;
+}
+
+.warning-text {
+    color: #fff;
+    margin: 0.5rem 0;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    text-align: left;
+}
+
+.warning-icon {
+    font-size: 1.2rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    .download-link {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+    }
+
+    .version-info {
+        font-size: 1rem;
+    }
+
+    .warning-text {
+        font-size: 0.9rem;
+    }
+}
+
+/* Mobile Optimization */
+@media (max-width: 480px) {
+    .tutorial-content {
+        padding-top: 50px;
+    }
+
+    .step {
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .warning-box {
+        margin: 1rem 0;
+    }
+
+    .warning-text {
+        font-size: 0.8rem;
+        line-height: 1.4;
+    }
+
+    .download-link {
+        width: 90%;
+        font-size: 0.9rem;
+        padding: 0.7rem 1rem;
+    }
+}
+
+/* Fix untuk header overlap */
+@media (max-height: 600px) {
+    .tutorial-content {
+        padding-top: 40px;
+    }
+
+    .tutorial-header {
+        margin-bottom: 1rem;
+    }
+}
+
+/* Back Button Style */
+.back-button {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.back-link {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    color: #4fd1c5;
+    text-decoration: none;
+    border: 2px solid #4fd1c5;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    background: rgba(79, 209, 197, 0.1);
+}
+
+.back-link:hover {
+    background: rgba(79, 209, 197, 0.2);
+    transform: translateX(-5px);
+    box-shadow: 0 0 15px rgba(79, 209, 197, 0.3);
+}
+
+/* Responsive adjustments for back button */
+@media (max-width: 480px) {
+    .back-button {
+        margin-top: 1.5rem;
+    }
+    
+    .back-link {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+}
+

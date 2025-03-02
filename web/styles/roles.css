@@ -1,0 +1,252 @@
+/* Roles Section Styles */
+.roles {
+    padding: 4rem 2rem;
+    background-image: url(assets/role-bg.png);
+    overflow: hidden;
+}
+
+.roles h2 {
+    text-align: center;
+    color: #fff;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    animation: fadeInDown 1s ease-out;
+}
+
+.roles-container {
+    position: relative;
+    overflow: hidden;
+    padding: 0 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.roles-grid {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+    width: 100%;
+}
+
+.role-card {
+    flex: 0 0 25%;
+    padding: 0 10px;
+    min-width: 250px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(139, 92, 246, 0.3);
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.role-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(139, 92, 246, 0.8);
+    box-shadow: 0 12px 40px rgba(139, 92, 246, 0.2);
+}
+
+.role-card.active {
+    transform: scale(1.05);
+    z-index: 2;
+}
+
+.role-header {
+    padding: 15px;
+    text-align: center;
+    color: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+/* Header gradients for different roles */
+.role-header.superdev { background: linear-gradient(45deg, #FF416C, #FF4B2B); border-bottom: 2px solid rgba(255, 65, 108, 0.5); }
+.role-header.cheater { background: linear-gradient(45deg, #4834d4, #686de0); border-bottom: 2px solid rgba(72, 52, 212, 0.5); }
+.role-header.ghost { background: linear-gradient(45deg, #2c3e50, #3498db); }
+.role-header.nick { background: linear-gradient(45deg, #ee0979, #ff6a00); }
+.role-header.vip { background: linear-gradient(45deg, #11998e, #38ef7d); }
+.role-header.svip { background: linear-gradient(45deg, #8E2DE2, #4A00E0); }
+.role-header.feature-plus { background: linear-gradient(45deg, #20bf55, #01baef); }
+.role-header.all-pass { background: linear-gradient(45deg, #F7971E, #FFD200); }
+.role-header.royal { background: linear-gradient(45deg, #5f2c82, #49a09d); }
+.role-header.dr { background: linear-gradient(45deg, #C33764, #1D2671); }
+.role-header.legend { background: linear-gradient(45deg, #FFD700, #FF8C00); }
+.role-header.developer { background: linear-gradient(45deg, #3498db, #2980b9); border-bottom: 2px solid rgba(52, 152, 219, 0.5); }
+.role-header.moderator { background: linear-gradient(45deg, #e74c3c, #c0392b); border-bottom: 2px solid rgba(231, 76, 60, 0.5); }
+
+.role-header h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.price {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.role-features {
+    padding: 1.5rem;
+    list-style: none;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.role-features li {
+    margin-bottom: 0.8rem;
+    color: #fff;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.role-features li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #4fd1c5;
+}
+
+.buy-button {
+    display: none;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .roles-grid {
+        display: flex;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .role-card {
+        flex: 0 0 100%;
+        padding: 0 10px;
+        min-width: unset;
+    }
+}
+
+.slider-controls {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    pointer-events: none;
+    z-index: 3;
+}
+
+.slider-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(79, 209, 197, 0.3);
+    border: none;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    pointer-events: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slider-button.prev-button {
+    left: 20px;
+}
+
+.slider-button.next-button {
+    right: 20px;
+}
+
+.slider-button:hover {
+    background: rgba(79, 209, 197, 0.6);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    background: #4fd1c5;
+    transform: scale(1.2);
+}
+
+.purchase-button-container {
+    display: flex;
+    justify-content: center;
+}
+
+.purchase-button {
+    background: linear-gradient(45deg, #8B5CF6, #6366F1);
+    color: white;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+    position: relative;
+}
+
+.purchase-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);
+    background: linear-gradient(45deg, #7C3AED, #4F46E5);
+}
+
+/* Tambahkan efek glow */
+.purchase-button::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: 32px;
+    background: linear-gradient(45deg, #8B5CF6, #6366F1);
+    z-index: -1;
+    opacity: 0.5;
+    filter: blur(8px);
+    transition: all 0.3s ease;
+}
+
+.purchase-button:hover::before {
+    opacity: 0.8;
+    filter: blur(12px);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .purchase-button {
+        padding: 12px 25px;
+        font-size: 1.1rem;
+    }
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IOS - SeaPs</title>
+    <link rel="stylesheet" href="style/host.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo-host">
+            <img src="style/asset/surge5.png" alt="" srcset="">
+        </div>
+    </header>
+    <div class="container">
+        <div class="content">
+            <h2>Surge5 Tutorial</h2>
+            <ol>
+                <li>Download and Install: <a class="vhost-link" href="https://apps.apple.com/us/app/surge-5/id1442620678" target="_blank">Surge5 APP</a></li>
+                <li>Press "OK".</li>
+                <li>Click on "Default.conf".</li>
+                <li>Click on "IMPORT" part -> Download Profile from URL.</li>
+                <li>Put url <span onclick="copyLink()" class="ip-server" href="www.seaps.site/server/ios_host">www.seaps.site/server/ios_host<svg onclick="copyLink()"style="cursor: pointer;"xmlns="http://www.w3.org/2000/svg" width="25" height="16" fill="currentColor" class="bi bi-copy" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/>
+                </svg> </span> and click "OK" and "Done"</li>
+                <li>Press "SETUP" and then agree to policy by clicking "OK" and "Allow" for VPN Configuration!.</li>
+                <li>Done, then open "Growtopia" and Connect!</li>
+            </ol>
+            <div class="note">
+                <strong>Note:</strong> If you are having trouble logging in, please open a ticket on the official SeaPs <a class="discord-link" href="https://discord.gg" target="_blank">Discord</a>
+            </div>
+            <br>
+            <button class="back-button" onclick="window.location.href='../index.html'">Back</button>
+        </div>
+    </div>
+    <footer>
+        <div class="logo">
+            <img src="../images/sealogo.png" alt="SEA PS Logo" srcset="">
+        </div>
+        <p>&copy; 2025 SeaPs. All Rights Reserved.</p>
+    </footer>
+</body>
+<script>
+    function copyLink() {
+        const link = 'www.seaps.site/server/ios_host';
+        navigator.clipboard.writeText(link)
+            .then(() => {
+                alert("Host copied to clipboard!");
+            })
+            .catch(err => {
+                console.error("Failed to copy host: ", err);
+            });
+    }
+</script>
+</html>

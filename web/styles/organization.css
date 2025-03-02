@@ -1,0 +1,74 @@
+/* Styling Section */
+#c-staff {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #0a192f; /* Warna biru gelap */
+    color: white;
+    overflow: hidden;
+}
+/* container */
+.staff-container {
+    display: flex;
+    animation: scroll 20s linear infinite; /* Animation for scrolling */
+}
+
+/* Slider bergerak otomatis */
+.staff-slider {
+    display: flex;
+    gap: 30px;
+    animation: moveSlider 12s linear infinite;
+}
+
+/* Box untuk setiap staff */
+.staff {
+    flex: 0 0 auto;
+    width: 200px;
+    height: 260px; /* Menjaga ukuran yang seragam */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #112240; /* Warna lebih terang dari background utama */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Styling gambar */
+.staff img {
+    width: 100%;
+    height: 180px; /* Ukuran gambar tetap */
+    object-fit: cover; /* Pastikan gambar tidak terdistorsi */
+    border-radius: 8px 8px 0 0; /* Hanya bagian atas yang melengkung */
+}
+
+/* Box untuk nama */
+.staff-name {
+    font-weight: 500;
+    background: #1e3a5f; /* Warna biru gelap */
+    padding: 5px 30px;
+    color: white;
+    text-align: center;
+    margin-bottom: 5px;
+    border-radius: 8px;
+}
+
+.user-link {
+    color: rgb(132, 192, 245);
+}
+
+/* Animasi gambar bergerak dari kanan ke kiri tanpa putus */
+@keyframes moveSlider {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* Media query untuk layar kecil */
+@media (max-width: 768px) {
+    .staff-slider {
+        animation-duration: 15s; /* Memperlambat animasi di layar kecil */
+    }
+}
